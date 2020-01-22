@@ -17,7 +17,7 @@ def validate_int(num):
 
 def configure_range():
     '''Set the high and low values for the random number'''
-    return 1, 10
+    return 1, 100
 
 
 def generate_secret(low, high):
