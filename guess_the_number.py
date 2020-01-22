@@ -42,15 +42,18 @@ def check_guess(guess, secret):
 
 def main():
 
+    count = 0
     (low, high) = configure_range()
     secret = generate_secret(low, high)
 
     while True:
+        count += count
         guess = get_guess()
         result = check_guess(guess, secret)
         print(result)
 
         if result == correct:
+            print(f'You guessed {count} times.')
             break
 
 
