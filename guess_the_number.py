@@ -53,6 +53,7 @@ def main():
         print(result)
 
         if result == correct:
+            print(f'You guessed {count} times.')
             break
 
 
