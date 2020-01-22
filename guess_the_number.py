@@ -45,10 +45,11 @@ def check_guess(guess, secret):
 def main():
 
     count = 0
+    play = True
     (low, high) = configure_range()
     secret = generate_secret(low, high)
 
-    while True:
+    while play:
         count += count
         guess = get_guess()
         result = check_guess(guess, secret)
@@ -56,7 +57,15 @@ def main():
 
         if result == correct:
             print(f'You guessed {count} times.')
-            break
+            play_again = input('Do you want to play again? Press "Y" or "y"! ')
+            if (play_again != 'y' and play_again != 'Y'):
+                play = False
+            else:
+                count = 0
+                (low, high) = configure_range()
+                secret = generate_secret(low, high)
+
+                
 
 
 if __name__ == '__main__':
